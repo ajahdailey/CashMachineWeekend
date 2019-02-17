@@ -10,7 +10,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.layout.FlowPane;
-
 /**
  * @author ZipCodeWilmington
  */
@@ -25,7 +24,7 @@ public class CashMachineApp extends Application {
 
         TextArea areaInfo = new TextArea();
 
-        Button btnSubmit = new Button("Set Account ID");
+        Button btnSubmit = new Button("Login with your account Id");
         btnSubmit.setOnAction(e -> {
             int id = Integer.parseInt(field.getText());
             cashMachine.login(id);
@@ -39,6 +38,7 @@ public class CashMachineApp extends Application {
             cashMachine.deposit(amount);
 
             areaInfo.setText(cashMachine.toString());
+      
         });
 
         Button btnWithdraw = new Button("Withdraw");
