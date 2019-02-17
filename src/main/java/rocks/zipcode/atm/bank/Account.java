@@ -20,6 +20,10 @@ public abstract class Account {
     }
 
     public boolean withdraw(int amount) {
+        boolean overdraft = (getBalance() - amount) < 0;
+        if(overdraft){
+            accountData.setMessage("Your account is overdrafted");
+        }
         if (canWithdraw(amount)) {
             updateBalance(getBalance() - amount);
             return true;

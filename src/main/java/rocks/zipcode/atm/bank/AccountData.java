@@ -8,6 +8,7 @@ public final class AccountData {
     private final int id;
     private final String name;
     private final String email;
+    private String message;
 
     private final int balance;
 
@@ -34,11 +35,22 @@ public final class AccountData {
         return balance;
     }
 
+    public String getMessage(){
+        return this.message;
+    }
+
+    public void setMessage(String message){
+        this.message = message;
+    }
+
+
+
     @Override
     public String toString() {
         return "Account id: " + id + '\n' +
                 "Name: " + name + '\n' +
                 "Email: " + email + '\n' +
-                "Balance: " + balance;
+                "Balance: " + balance+ '\n' +
+                "Message: " + message;
     }
 }
